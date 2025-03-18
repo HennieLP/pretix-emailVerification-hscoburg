@@ -1,0 +1,42 @@
+[project]
+name = "pretix-emailChecker"
+dynamic = ["version"]
+description = "Checks if the Mail has the right Ending"
+readme = "README.rst"
+license = {text = "Apache"}
+keywords = ["pretix"]
+authors = [
+    {name = "Hendrik Hassa", email = "pretix-emailChecker@4o4.li"},
+]
+maintainers = [
+    {name = "Hendrik Hassa", email = "pretix-emailChecker@4o4.li"},
+]
+
+dependencies = [
+]
+
+[project.entry-points."pretix.plugin"]
+pretix_emailChecker = "pretix_emailChecker:PretixPluginMeta"
+
+[project.entry-points."distutils.commands"]
+build = "pretix_plugin_build.build:CustomBuild"
+
+[build-system]
+requires = [
+    "setuptools",
+    "pretix-plugin-build",
+]
+
+[project.urls]
+homepage = "https://gitlab.hs-coburg.de/hen0481s/game-jam-pretix-plugin"
+repository = "https://gitlab.hs-coburg.de/hen0481s/game-jam-pretix-plugin"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {attr = "pretix_emailChecker.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["pretix*"]
+namespaces = false

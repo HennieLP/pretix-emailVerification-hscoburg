@@ -1,0 +1,5 @@
+[plugin]
+package = "pretix-emailChecker"
+modules = [ "pretix_emailChecker" ]
+marketplace_name = "emailChecker"
+
